@@ -1,0 +1,80 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <a class="nav-link mt-3" href="">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        Dashboard
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#usersNav"
+                       aria-expanded="false" aria-controls="usersNav">
+                       <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        User
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="usersNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="/users-create">Add User</a>
+                            <a class="nav-link" href="/users">View User</a>
+                        </nav>
+                    </div>
+                    
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                       data-target="#coursesNav" aria-expanded="false" aria-controls="coursesNav">
+                       <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Courses
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="coursesNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="/courses-create">Add Course</a>
+                            <a class="nav-link" href="/courses">View Courses</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#professorsNav"
+                       aria-expanded="false" aria-controls="professorsNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Professors
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="professorsNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="/professors-create">Add Professor</a>
+                            <a class="nav-link" href="/professors">View Professor</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#enrollmentsNav"
+                       aria-expanded="false" aria-controls="enrollmentsNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Enrollments
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="enrollmentsNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="/enrollments-create">Add Enrollment</a>
+                            <a class="nav-link" href="/enrollments">View Enrollments</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                       data-target="#studentsNav" aria-expanded="false" aria-controls="studentsNav">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Students
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="studentsNav" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="/students-create">Add Student</a>
+                            <a class="nav-link" href="/students">View Students</a>
+                        </nav>
+                    </div>
+
+                </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">

@@ -1,0 +1,37 @@
+{% extends "layout/appLayout.html" %}
+{% block title %} Enrollment Edit{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Edit Enrollment</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-2">Edit Enrollment</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post" action="/enrollments-update">
+                            <input type="hidden" name="id" value="{{ enrollment.id }}">
+                            <div class="form-group">
+                                <label class="small mb-1" >student ID</label>
+                                <input class="form-control py-4" name="student_id" type="number" value="{{ enrollment.student_id }}" id="student_id"  placeholder="Enter Student ID" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Course ID</label>
+                                <input class="form-control py-4" name="course_id" type="number" value="{{ enrollment.course_id }}" id="course_id" placeholder="Enter Course ID" />
+                            </div>
+                            <input class="btn btn-primary"  id="login" value="Edit Instructor" type="submit"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+
+
+{% endblock %}

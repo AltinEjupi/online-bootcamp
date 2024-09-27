@@ -1,0 +1,59 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Professor Create{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Add Professor</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-2">Add Professor</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/professors-store">
+                            <div class="form-group">
+                                <label class="small mb-1" >First Name</label>
+                                <input class="form-control py-4" name="first_name" type="text" placeholder="Enter First Name" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Last Name</label>
+                                <input class="form-control py-4" name="last_name" type="text" placeholder="Enter Last Name" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Email</label>
+                                <input class="form-control py-4" name="email" type="email" placeholder="Enter Email" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Profession</label>
+                                <input class="form-control py-4" name="profession" type="text" placeholder="Enter Profession" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Address</label>
+                                <input class="form-control py-4" name="address" type="text" placeholder="Enter Address" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" >Phone</label>
+                                <input class="form-control py-4" name="phone" type="text" placeholder="Enter Phone" />
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" for="professor-select">Course</label>
+                                <select name="course_id" id="course-select" class="form-control">
+                                    <option value="">Pick a Course</option>
+                                    {% for course in courses %}
+                                    <option value="{{ course.id }}">{{ course.course_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input class="btn btn-primary"  id="login" value="Create"
+                                   type="submit"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+{% endblock %}

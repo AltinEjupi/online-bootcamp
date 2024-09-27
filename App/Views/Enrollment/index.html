@@ -1,0 +1,55 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Library | Enrollment{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Enrollment</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Enrollments</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Course ID</th>
+                            <th>Created</th>
+                            <th>Updated</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for enrollment in enrollments %}
+                        <tr>
+                            <td>{{ enrollment.student.first_name }}</td>
+                            <td>{{ enrollment.course.course_name }}</td>
+                            <td>{{ enrollment.created_at }}</td>
+                            <td>{{ enrollment.updated_at }}</td>
+                            <td><a href="/enrollments-edit?id={{enrollment.id}}">Edit</a></td>
+                        <td><form method='post' action='/enrollments-delete' onsubmit="return confirmSubmit();">
+                            <input type='hidden' name='id' value='{{enrollment.id}}'>
+                            <input type='submit' value='Delete'>
+                        </form></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+
+    function confirmSubmit(){
+        let confirmation = confirm("Are you sure to want to delete this Enrollment?");
+        return confirmation;
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout/appLayout.html" %}
+
+{% block title %}Library | Courses{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Courses</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Courses</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Course Code</th>
+                            <th>Description</th>
+                            <th>Professor</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for course in courses %}
+                        <tr>
+                            <td>{{ course.course_name }}</td>
+                            <td>{{ course.course_code }}</td>
+                            <td>{{ course.description }}</td>
+                            <td>{{ course.professor.first_name }}</td>
+                            <td><a href="/courses-edit?id={{course.id}}">Edit</a></td>
+                        <td><form method='post' action='/courses-delete' onsubmit="return confirmSubmit();">
+                            <input type='hidden' name='id' value='{{course.id}}'>
+                            <input type='submit' value='Delete'>
+                        </form></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+
+    function confirmSubmit(){
+        let confirmation = confirm("Are you sure to want to delete this Course?");
+        return confirmation;
+    }
+</script>
+{% endblock %}
